@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_figma_proway/presenter/ui/create-account/create_account_page.dart';
+import 'package:login_figma_proway/presenter/ui/confirmation/custom_confirmation_page.dart';
 
 void main() => runApp(const Main());
 
@@ -10,7 +10,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CreateAccountPage(),
+      home: CustomConfirmationPage(),
     );
   }
 }
