@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared-widgets/custom_icon_buttons.dart';
@@ -5,9 +6,27 @@ import '../../shared-widgets/custom_text_button.dart';
 import '../../shared-widgets/custom_text_form_field.dart';
 
 class BodySigninPage extends StatelessWidget {
-  const BodySigninPage({
+  BodySigninPage({
     Key? key,
   }) : super(key: key);
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  String urlBase = 'http://localhost:49153/api/Usuario';
+
+  Future postLogin() async {
+    try {
+      String urlLogin = '$urlBase/v1/auth/login';
+
+      var data = {'email': emailController, 'password': passwordController};
+      var response = await Dio().post(urlLogin, data: data);
+
+      print(response.data);
+    } catch (e) {
+      print('Deu erro na requisiçao $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +65,12 @@ class BodySigninPage extends StatelessWidget {
                   ),
                 ),
                 CustomTextFormField(
+                  textController: emailController,
                   customHintText: 'Email',
                   customIcon: const Icon(Icons.email),
                 ),
                 CustomTextFormField(
+                  textController: passwordController,
                   customHintText: 'Password',
                   customIcon: const Icon(Icons.lock),
                   customObscureText: true,
@@ -59,7 +80,9 @@ class BodySigninPage extends StatelessWidget {
                   routeName: '/create-account',
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    postLogin();
+                  },
                   child: const Text("SIGN IN"),
                 ),
                 const SizedBox(height: 30),

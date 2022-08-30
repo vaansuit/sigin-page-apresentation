@@ -5,9 +5,14 @@ import '../../shared-widgets/custom_text_button.dart';
 import '../../shared-widgets/custom_text_form_field.dart';
 
 class CreateAccountPageBody extends StatelessWidget {
-  const CreateAccountPageBody({
+  CreateAccountPageBody({
     Key? key,
   }) : super(key: key);
+
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +51,23 @@ class CreateAccountPageBody extends StatelessWidget {
                   ),
                 ),
                 CustomTextFormField(
+                  textController: nameController,
                   customHintText: 'Name',
                   customIcon: const Icon(Icons.person),
                 ),
                 CustomTextFormField(
+                  textController: emailController,
                   customHintText: 'Email',
                   customIcon: const Icon(Icons.person),
                 ),
                 CustomTextFormField(
+                  textController: passwordController,
                   customHintText: 'Password',
                   customIcon: const Icon(Icons.lock),
                   customObscureText: true,
                 ),
                 CustomTextFormField(
+                  textController: confirmPasswordController,
                   customHintText: 'Confirm Password',
                   customIcon: const Icon(Icons.lock),
                   customObscureText: true,
