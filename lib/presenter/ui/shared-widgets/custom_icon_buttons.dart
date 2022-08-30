@@ -18,25 +18,31 @@ class CustomIconButtons extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          IconButton(
-            onPressed: () {},
-            icon: const FaIcon(
-              FontAwesomeIcons.linkedin,
-              size: 50,
+          InkWell(
+            child: IconButton(
+              onPressed: () {},
+              icon: const FaIcon(
+                FontAwesomeIcons.linkedin,
+                size: 50,
+              ),
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const FaIcon(
-              FontAwesomeIcons.googlePlus,
-              size: 50,
+          InkWell(
+            child: IconButton(
+              onPressed: () {},
+              icon: const FaIcon(
+                FontAwesomeIcons.googlePlus,
+                size: 50,
+              ),
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const FaIcon(
-              FontAwesomeIcons.github,
-              size: 50,
+          InkWell(
+            child: IconButton(
+              onPressed: () {},
+              icon: const FaIcon(
+                FontAwesomeIcons.github,
+                size: 50,
+              ),
             ),
           ),
         ],
