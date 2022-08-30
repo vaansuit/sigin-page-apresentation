@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
     Key? key,
+    required this.routeName,
     required this.text,
   }) : super(key: key);
 
   final String text;
+  final String routeName;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,9 @@ class CustomTextButton extends StatelessWidget {
         style: TextButton.styleFrom(
           primary: Colors.black,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).popAndPushNamed(routeName);
+        },
         child: Text(
           text,
           style: const TextStyle(fontSize: 20),

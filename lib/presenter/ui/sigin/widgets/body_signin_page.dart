@@ -56,6 +56,7 @@ class BodySigninPage extends StatelessWidget {
                 ),
                 const CustomTextButton(
                   text: 'Forgot your password? Click here!',
+                  routeName: '/create-account',
                 ),
                 ElevatedButton(
                   onPressed: () {},
@@ -76,6 +77,7 @@ class BodySigninPage extends StatelessWidget {
                 ),
                 const CustomTextButton(
                   text: 'SIGN UP HERE!',
+                  routeName: '/create-account',
                 ),
               ],
             ),

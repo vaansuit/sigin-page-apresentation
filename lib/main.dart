@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_figma_proway/presenter/ui/create-account/create_account_page.dart';
 import 'package:login_figma_proway/presenter/ui/sigin/sigin_page.dart';
 
 void main() => runApp(const Main());
@@ -8,9 +9,13 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SiginPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SiginPage(),
+        '/create-account': (context) => const CreateAccountPage(),
+      },
     );
   }
 }

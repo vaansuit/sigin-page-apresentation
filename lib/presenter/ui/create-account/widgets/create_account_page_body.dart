@@ -80,7 +80,10 @@ class CreateAccountPageBody extends StatelessWidget {
                     ),
                   ],
                 ),
-                const CustomTextButton(text: 'SIGN IN HERE!')
+                const CustomTextButton(
+                  text: 'SIGN IN HERE!',
+                  routeName: '/',
+                ),
               ],
             ),
           ),
